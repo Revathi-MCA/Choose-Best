@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>women</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- NAVBAR -->
+ <header class="navbar">
+    <img src="./images/logo.png" alt="Logo" class="logo" />
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="women.html">WOMEN</a>
+        <a href="men.html">MEN</a>
+        <a href="kids.html">KIDS</a>
+    </nav>
+    <div class="user-actions">
+      <div class="navbar-search">
+        <input type="text" id="searchInput" placeholder="Search..." aria-label="Search" />
+        <button type="button" id="searchBtn" aria-label="Search Button">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="7"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+      </div>
+      <span class="icon" title="Profile" id="profileBtn">&#128100;</span> <!-- user icon -->
+      <span>Profile</span>
+      <a href="wishlist.html" class="icon" title="Wishlist">&#10084;</a>
+      <span>Wishlist</span>
+
+    </div>
+</header>
+<!-- profile -->
+<div id="overlay" style="display: none;">
+  <div class="profile-popup" id="profilePopup">
+    <div class="profile-close-btn" onclick="closeProfile()">✖</div>
+    <img src="./images/user.jpg" alt="Girl Profile" class="profile-img" />
+    <h2 id="displayName">Jane Doe</h2>
+    <p id="displayRole">Shopping Enthusiast</p>
+    <p id="displayEmail">jane.doe@example.com</p>
+    <p id="displayAddress">123 Main Street, NY</p>
+    <button onclick="openEditForm()">Edit Profile</button>
+  </div>
+  <div class="edit-form" id="editForm" style="display: none;">
+    <h2>Edit Profile</h2>
+    <input type="text" id="nameInput" placeholder="Full Name" />
+    <input type="text" id="roleInput" placeholder="Role" />
+    <input type="email" id="emailInput" placeholder="Email" />
+    <input type="text" id="addressInput" placeholder="Address" />
+    <button onclick="saveProfile()">Save</button>
+    <button onclick="cancelEdit()">Cancel</button>
+  </div>
+</div>
+</header>
+<div class="heroine">
+    <img src="./images/main.png">
+</div>
+<!-- galley -->
+     <div class="gallery" id="womenGallery">
+    <div class="item">
+      <img src="./images/img1.avif" alt="Women Image 1" />
+      <a href="page1.html" class="choose-btn">Choose Best</a>
+    </div>
+    <div class="item">
+      <img src="./images/img2.avif" alt="Women Image 2" />
+      <a href="page2.html" class="choose-btn">Choose Best</a>
+    </div>
+    <div class="item">
+      <img src="./images/img3.avif" alt="Women Image 3" />
+      <a href="page3.html" class="choose-btn">Choose Best</a>
+    </div>
+    <div class="item">
+      <img src="./images/img4.avif" alt="Women Image 4" />
+      <a href="page4.html" class="choose-btn">Choose Best</a>
+    </div>
+    <div class="item">
+      <img src="./images/img5.avif" alt="Women Image 5" />
+      <a href="page5.html" class="choose-btn">Choose Best</a>
+    </div>
+    <div class="item">
+      <img src="./images/img6.avif" alt="Women Image 6" />
+      <a href="page6.html" class="choose-btn">Choose Best</a>
+    </div>
+    <div class="item">
+      <img src="./images/img7.avif" alt="Women Image 7" />
+      <a href="page7.html" class="choose-btn">Choose Best</a>
+    </div>
+    <div class="item">
+      <img src="./images/img8.avif" alt="Women Image 8" />
+      <a href="page8.html" class="choose-btn">Choose Best</a>
+    </div>
+    <div class="item">
+      <img src="./images/img9.avif" alt="Women Image 9" />
+      <a href="page9.html" class="choose-btn">Choose Best</a>
+    </div>
+    <div class="item">
+      <img src="./images/img10.avif" alt="Women Image 10" />
+      <a href="page10.html" class="choose-btn">Choose Best</a>
+    </div>
+    <div class="item">
+      <img src="./images/img11.avif" alt="Women Image 1" />
+      <a href="page11.html" class="choose-btn">Choose Best</a>
+    </div>
+    <div class="item">
+      <img src="./images/img12.avif" alt="Women Image 2" />
+      <a href="page12.html" class="choose-btn">Choose Best</a>
+    </div>
+    <div class="item">
+      <img src="./images/img13.avif" alt="Women Image 3" />
+      <a href="page13.html" class="choose-btn">Choose Best</a>
+    </div>
+    <div class="item">
+      <img src="./images/img14.avif" alt="Women Image 4" />
+      <a href="page14.html" class="choose-btn">Choose Best</a>
+    </div>
+    <div class="item">
+      <img src="./images/img15.avif" alt="Women Image 5" />
+      <a href="page15.html" class="choose-btn">Choose Best</a>
+    </div>
+    <div class="item">
+      <img src="./images/img16.avif" alt="Women Image 6" />
+      <a href="page16.html" class="choose-btn">Choose Best</a>
+    </div>
+    <div class="item">
+      <img src="./images/img17.avif" alt="Women Image 7" />
+      <a href="page17.html" class="choose-btn">Choose Best</a>
+    </div>
+    <div class="item">
+      <img src="./images/img18.avif" alt="Women Image 8" />
+      <a href="page18.html" class="choose-btn">Choose Best</a>
+    </div>
+    <div class="item">
+      <img src="./images/img19.avif" alt="Women Image 9" />
+      <a href="page19.html" class="choose-btn">Choose Best</a>
+    </div>
+    <div class="item">
+      <img src="./images/img20.avif" alt="Women Image 10" />
+      <a href="page20.html" class="choose-btn">Choose Best</a>
+    </div>
+    <div class="item">
+      <img src="./images/img21.avif" alt="Women Image 1" />
+      <a href="page21.html" class="choose-btn">Choose Best</a>
+    </div>
+    <div class="item">
+      <img src="./images/img22.avif" alt="Women Image 2" />
+      <a href="page22.html" class="choose-btn">Choose Best</a>
+    </div>
+    <div class="item">
+      <img src="./images/img23.avif" alt="Women Image 3" />
+      <a href="page23.html" class="choose-btn">Choose Best</a>
+    </div>
+    <div class="item">
+      <img src="./images/img24.avif" alt="Women Image 4" />
+      <a href="page24.html" class="choose-btn">Choose Best</a>
+    </div>
+    <div class="item">
+      <img src="./images/img25.avif" alt="Women Image 5" />
+      <a href="page25.html" class="choose-btn">Choose Best</a>
+    </div>
+    <div class="item">
+      <img src="./images/img26.avif" alt="Women Image 6" />
+      <a href="page26.html" class="choose-btn">Choose Best</a>
+    </div>
+    <div class="item">
+      <img src="./images/img27.avif" alt="Women Image 7" />
+      <a href="page27.html" class="choose-btn">Choose Best</a>
+    </div>
+    <div class="item">
+      <img src="./images/img28.avif" alt="Women Image 8" />
+      <a href="page28.html" class="choose-btn">Choose Best</a>
+    </div>
+    <div class="item">
+      <img src="./images/img29.avif" alt="Women Image 9" />
+      <a href="page29.html" class="choose-btn">Choose Best</a>
+    </div>
+  </div>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-about">
+      <h3>Choose Best</h3>
+      <p>Helping you compare and choose the best products across Women, Men & Kids categories.</p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="women.html">Women</a></li>
+        <li><a href="men.html">Men</a></li>
+        <li><a href="kids.html">Kids</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p>Email: support@choosebest.com</p>
+      <p>Phone: +91 98765 43210</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    &copy; 2025 Choose Best. All rights reserved.
+  </div>
+</footer>
+
+  <script src="script.js"></script>
+  <script src="wishlist.js"></script>
+</body>
+</html>
+
