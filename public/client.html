@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Upload Page</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    img { width: 100px; margin: 5px; display: inline-block; vertical-align: middle; }
+    button { margin: 5px; }
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Upload Image</h1>
+
+  <!-- Category select -->
+  <label for="category" style="margin-left: 560px;">Select category:</label>
+  <select id="category">
+    <option value="women">Women</option>
+    <option value="men">Men</option>
+    <option value="kids">Kids</option>
+  </select>
+
+  <!-- File input -->
+  <input type="file" id="fileInput" accept="image/*">
+  <button onclick="uploadImage()" style="margin-left: 650px;">Upload</button>
+
+  <h2>Your uploaded images</h2>
+  <div id="uploads"></div>
+
+  <script>
+    const API_URL = 'http://localhost:5000/api/images';
+    const UPLOADS_URL = 'http://localhost:5000/uploads/';
+
+    async function uploadImage() {
+      const cat = document.getElementById('category').value;
+      const file = document.getElementById('fileInput').files[0];
+      if (!file) {
+        alert('Please choose a file first');
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append('image', file);
+      formData.append('category', cat);
+
+      const res = await fetch(API_URL, {
+        method: 'POST',
+        body: formData
+      });
+
+      if (res.ok) {
+        alert('Saved in website');
+        loadUploads();
+      } else {
+        alert('Upload failed');
+      }
+    }
+
+    async function deleteImage(id) {
+      if (!confirm('Are you sure you want to delete this image?')) return;
+
+      const res = await fetch(`${API_URL}/${id}`, {
+        method: 'DELETE'
+      });
+
+      if (res.ok) {
+        loadUploads();
+      } else {
+        alert('Delete failed');
+      }
+    }
+
+    async function loadUploads() {
+      const cat = document.getElementById('category').value;
+      const res = await fetch(`${API_URL}?category=${cat}`);
+      const data = await res.json();
+
+      const container = document.getElementById('uploads');
+      container.innerHTML = '';
+
+      data.forEach(img => {
+        const wrapper = document.createElement('div');
+        wrapper.style.display = 'inline-block';
+        wrapper.style.textAlign = 'center';
+
+        const image = document.createElement('img');
+        image.src = UPLOADS_URL + img.filename;
+
+        const btn = document.createElement('button');
+        btn.textContent = 'Remove';
+        btn.onclick = () => deleteImage(img._id);
+
+        wrapper.appendChild(image);
+        wrapper.appendChild(btn);
+        container.appendChild(wrapper);
+      });
+    }
+
+    // Reload list whenever category changes
+    document.getElementById('category').addEventListener('change', loadUploads);
+
+    // Initial load
+    loadUploads();
+  </script>
+
+</body>
+</html>
